@@ -1,8 +1,0 @@
-/* Custom styles to complement Tailwind */
-body {
-    font-family: 'Inter', sans-serif;
-}
-
-nav a:hover {
-    transition: color 0.3s ease;
-}
