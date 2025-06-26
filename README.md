@@ -1,118 +1,109 @@
-# Portfolio React + Express Backend
+Portfolio React + Express Backend
+A full-stack portfolio website with a blog feature, built using React (Vite) for the frontend and Express with PostgreSQL for the backend. The application supports viewing blog posts, a user system, and features a responsive, modern UI styled with Tailwind CSS, including subtle gold gradient and pattern overlays.
+Features
 
-This is a full-stack portfolio website with a blog feature built using **React** (Vite) on the frontend and **Express** with **PostgreSQL** on the backend. It supports viewing blog posts, a user system, and a responsive, modern UI with Tailwind CSS.
+React Frontend: Built with Vite for fast development and optimized builds.
+Express Backend: Serves REST API endpoints for blog posts and user management.
+PostgreSQL Database: Managed via the pg package for robust data storage.
+Tailwind CSS: Provides modern, responsive styling with gold gradient and pattern overlays.
+Blog Functionality: Supports listing blog posts and viewing individual posts.
+Proxy Setup: Enables seamless frontend-backend communication during development.
+Concurrent Development: Uses concurrently to run frontend and backend simultaneously.
+Production-Ready: Express serves the React build for deployment.
 
----
+Project Structure
+/frontend        # React app (Vite)
+/server          # Express backend
+  /routes        # API routes
+  /db            # Database connection and queries
+.env             # Environment variables for DB connection
 
-## Features
+Getting Started
+Prerequisites
 
-- React frontend with Vite for fast development and build
-- Express backend serving REST API endpoints for blogs and users
-- PostgreSQL database connection via `pg`
-- Tailwind CSS styling with subtle gold gradient and pattern overlays
-- Blog listing and individual blog post pages
-- Proxy setup for frontend to communicate with backend during development
-- Concurrent development with `concurrently`
-- Production-ready Express server serving the React build
+Node.js: Version 18 or higher (recommended).
+PostgreSQL: Running locally or remotely.
 
----
-
-## Project Structure
-
-/frontend # React app (Vite)
-/server # Express backend
-/routes # API routes
-/db # Database connection and queries
-.env # Environment variables for DB connection
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18+ recommended)
-- PostgreSQL (running locally or remotely)
-
-### Clone the repo
-
+Clone the Repository
 git clone https://github.com/yourusername/yourrepo.git
 cd yourrepo
-Development
-1. Setup environment variables
-Create a .env file in the /server folder:
 
+Development
+
+Set Up Environment Variables
+Create a .env file in the /server folder with the following:
 DB_USER=bloguser
 DB_PASS=yourpassword
 DB_NAME=blogdb
 DB_HOST=localhost
 DB_PORT=5432
-2. Install dependencies
-Backend:
 
+
+Install Dependencies
+For the backend:
 cd server
 npm install
-Frontend:
 
+For the frontend:
 cd ../frontend
 npm install
-3. Run backend and frontend concurrently
-From the project root folder, run:
 
+
+Run Backend and Frontend Concurrently
+From the project root folder, run:
 npx concurrently "npm run dev --prefix server" "npm run dev --prefix frontend"
-This runs backend on port 3000 and frontend on port 3001.
+
+This starts:
+
+Backend on http://localhost:3000
+Frontend on http://localhost:3001
+
+
 
 Building for Production
-1. Build frontend production assets
-From the frontend folder:
 
+Build Frontend Production Assets
+From the /frontend folder:
 npm run build
-This outputs static files to frontend/dist.
 
-2. Serve frontend with Express backend
-The backend is configured to serve static files from frontend/dist when in production mode.
+This generates static files in frontend/dist.
 
-3. Run backend in production mode
-From the server folder:
+Serve Frontend with Express Backend
+The backend is configured to serve static files from frontend/dist in production mode.
 
+Run Backend in Production Mode
+From the /server folder:
 npm run prod
-This script sets NODE_ENV=production and starts the backend server.
+
+This sets NODE_ENV=production and starts the backend server.
+
 
 Environment Variables Reference
-Create a .env.example file in the /server folder with the following content:
-
+Create a .env.example file in the /server folder with the following content for reference:
 DB_USER=your_db_username
 DB_PASS=your_db_password
 DB_NAME=your_db_name
 DB_HOST=your_db_host
 DB_PORT=5432
+
 Scripts Summary
 Frontend (frontend/package.json)
-dev — run development server with Vite on port 3001
 
-build — build production assets in dist
-
-preview — preview production build locally
+dev: Runs the development server with Vite on port 3001.
+build: Builds production assets in the dist folder.
+preview: Previews the production build locally.
 
 Backend (server/package.json)
-dev — run backend with nodemon on port 3000
 
-start — start backend server normally
-
-prod — start backend in production mode (NODE_ENV=production)
+dev: Runs the backend with nodemon on port 3000.
+start: Starts the backend server normally.
+prod: Starts the backend in production mode (NODE_ENV=production).
 
 Technologies Used
+
 React 19 with Vite
-
 Express 5
-
 PostgreSQL
-
 Tailwind CSS
-
 Concurrently
-
 Node.js & npm
-
-License
-This project is licensed under the MIT License.
