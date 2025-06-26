@@ -41,13 +41,13 @@ const Home = () => {
         </div>
 
         <div className="flex justify-center space-x-5 text-2xl text-yellow-500/90">
-          <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <a href="https://github.com/x1nnas" target="_blank" rel="noreferrer">
             <FaGithub className="hover:text-yellow-400 transition" />
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/jose-msferreira/" target="_blank" rel="noreferrer">
             <FaLinkedin className="hover:text-yellow-400 transition" />
           </a>
-          <a href="mailto:you@example.com">
+          <a href="mailto:jmsfbusiness@gmail.com" target="_blank" rel="noreferrer">
             <FaEnvelope className="hover:text-yellow-400 transition" />
           </a>
         </div>
